@@ -10,7 +10,7 @@ jobs:
     strategy:
       matrix:
         python-version: [  "3.12" ]
-        os: [ acos-latest ]
+        os: [ macos-latest ]
       fail-fast: false
     defaults:
       run:
