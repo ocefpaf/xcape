@@ -239,12 +239,8 @@ def _calc_cape_gufunc(*args, **kwargs):
         over the grid.
     '''
 
-    if (kwargs['vertical_lev']=='sigma'):
-        signature = "(i),(i),(i),(),(),()->(),()"
-        output_dtypes = ('f4','f4')
-    elif (kwargs['vertical_lev']=='pressure'):
-        signature = "(i),(i),(i),(),(),(),()->(),()"
-        output_dtypes = ('f4','f4')
+    signature = "(i),(i),(i),(),(),()->(),()"
+    output_dtypes = ('f4','f4')
         
     if kwargs['source']=='most-unstable':
         signature += ",(),()"
@@ -451,12 +447,8 @@ def _calc_srh_gufunc(*args, **kwargs):
         over the grid.
     '''
     
-    if (kwargs['vertical_lev']=='sigma'):
-        signature = "(i),(i),(i),(i),(i),(),(),(),(),()->(),()"
-        output_dtypes = ('f4','f4')
-    elif (kwargs['vertical_lev']=='pressure'):
-        signature = "(i),(i),(i),(i),(i),(),(),(),(),(),()->(),()"
-        output_dtypes = ('f4','f4')
+    signature = "(i),(i),(i),(i),(i),(),(),(),(),()->(),()"
+    output_dtypes = ('f4','f4')
     if kwargs['output_var']=='all':
         signature += ",(),(),(),(),(),()" #",(2),(2),(2)"
         output_dtypes = output_dtypes +  ('f4','f4','f4','f4','f4','f4') #('f4','f4','f4')
