@@ -1,3 +1,18 @@
 include LICENSE
-include versioneer.py
-include xcape/_version.py
+include README.md
+include pyproject.toml
+
+graft xcape
+
+prune .github
+prune *.egg-info
+prune doc
+prune test
+
+exclude .coveragerc
+exclude ruff.toml
+exclude .gitignore
+exclude .isort.cfg
+exclude .pre-commit-config.yaml
+exclude *.yml
+exclude xcape/_version.py

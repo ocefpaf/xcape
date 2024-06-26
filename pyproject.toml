@@ -1,0 +1,59 @@
+[build-system]
+build-backend = "mesonpy"
+requires = [
+  "charset_normalizer",
+  "meson-python>=0.15",
+  "numpy>=2",
+  "setuptools_scm",
+]
+
+[project]
+name = "xcape"
+description = "Fast convective parameters for numpy, dask, and xarray"
+readme = "README.md"
+license = {file = "LICENSE"}
+authors = [
+    {name = "xcape Developers", email = "rpa@ldeo.columbia.edu"},
+]
+requires-python = ">=3.9"
+classifiers = [
+    'Development Status :: 4 - Beta',
+    'License :: OSI Approved :: Apache Software License',
+    'Operating System :: OS Independent',
+    'Intended Audience :: Science/Research',
+    'Programming Language :: Python',
+    'Programming Language :: Python :: 3',
+    'Programming Language :: Python :: 3.9',
+    'Programming Language :: Python :: 3.10',
+    'Programming Language :: Python :: 3.11',
+    'Programming Language :: Python :: 3.12',
+    'Topic :: Scientific/Engineering',
+]
+dynamic = [
+  "version",
+]
+dependencies = [
+  "dask",
+  "numpy>=1.16",
+  "xarray>=0.14.1",
+]
+
+[project.urls]
+documentation = "https://xcape.readthedocs.io/en/latest/"
+homepage = "https://github.com/xgcm/xcape"
+repository = "https://github.com/xgcm/xcape"
+
+[tool.setuptools_scm]
+write_to = "xcape/_version.py"
+write_to_template = "__version__ = '{version}'"
+tag_regex = "^(?P<prefix>v)?(?P<version>[^\\+]+)(?P<suffix>.*)?$"
+
+[tool.check-manifest]
+ignore = [
+    "*.yml",
+    ".coveragerc",
+    "doc",
+    "doc/*",
+    "test",
+    "test/*",
+]
